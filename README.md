@@ -89,20 +89,20 @@ Mosaic Web is where you look first. Mosaic Desktop is the product. The CLI is wh
 
 | | Web | Desktop | CLI |
 |---|:-:|:-:|:-:|
-| ✦ **Make** · a template on the live canvas; every bound rectangle is a handle | [a playground and editor for the web-safe templates](https://app.m0saic.io/make) | the full Make page | `make` |
+| ✦ **[Make](https://app.m0saic.io/make)** · a template on the live canvas; every bound rectangle is a handle | a playground and editor for the web-safe templates | the full Make page | `make` |
 | 🎬 **Render** · ffmpeg on your machine | hands you the command | through Make | `make` |
 | ▶ **Automation** · cron, CI, a schedule | n/a | the Jobs queue | `make` from any script |
-| ⬚ **Templates** · the library, with previews and props | [✓ open](https://app.m0saic.io/templates) | ✓ | `list-templates` |
+| ⬚ **[Templates](https://app.m0saic.io/templates)** · the library, with previews and props | ✓ | ✓ | `list-templates` |
 | ▨ **Compose** · start from a layout and fill the rectangles yourself: a `.mosaicx` built by hand instead of by a template | Desktop only | ✓ | n/a |
-| ✎ **Layout** · the m0 editor | [✓ open](https://app.m0saic.io/layout) · share by URL | ✓ | `"3(1,1,1)"`, `--anim` |
-| 📥 **Import** · an SVG in, an m0 layout out | [✓ open](https://app.m0saic.io/svg-to-mosaic) | ✓ | n/a |
+| ✎ **[Layout](https://app.m0saic.io/layout)** · the m0 editor | ✓ share by URL | ✓ | `"3(1,1,1)"`, `--anim` |
+| 📥 **[Import](https://app.m0saic.io/svg-to-mosaic)** · an SVG in, an m0 layout out | ✓ | ✓ | n/a |
 | ✳ **Agent** · workspaces, a shell with the MCP server wired in, the harness picker (agent-agnostic: bring your own) | Desktop only | ✓ | `mcp`, `init` |
-| 🫂 **Community** · one tile per contributor | [✓ open](https://app.m0saic.io/community) | ✓ seeded, signed updates | `--community-repo` |
-| 📖 **Learn** · guided tours of Make and m0 | [✓ open](https://app.m0saic.io/learn) | ✓ | n/a |
-| ◈ **News** · what changed, release by release | [✓ open](https://app.m0saic.io/news) | ✓ | n/a |
+| 🫂 **[Community](https://app.m0saic.io/community)** · one tile per contributor | ✓ | ✓ seeded, signed updates | `--community-repo` |
+| 📖 **[Learn](https://app.m0saic.io/learn)** · guided tours of Make and m0 | ✓ | ✓ | n/a |
+| ◈ **[News](https://app.m0saic.io/news)** · what changed, release by release | ✓ | ✓ | n/a |
 | 🔧 **Tools** · ffmpeg toolchains, bundled versions, diagnostics | Desktop only | ✓ | `setup`, `versions`, `doctor` |
 | 🗂 **[File types](https://github.com/m0saic-dsl/m0/blob/main/FILE-FORMATS.md)** · `.m0`, `.m0c`, `.m0p`, `.m0v`, `.mosaic`, `.mosaicx` | save and open | registered, with file icons on macOS and Windows | `make`, `resolve`, `open` |
-| ◔ **Telemetry** · [standard / local / ghost](TELEMETRY.md) | n/a | ✓ | `telemetry` |
+| ◔ **[Telemetry](TELEMETRY.md)** · standard / local / ghost | n/a | ✓ | `telemetry` |
 | ⚑ **License** · activate a key | n/a | ✓ | `activate`, `license` |
 
 ## Render something from your data
@@ -124,10 +124,11 @@ zooming review out. `m0saic list-templates` shows every template, and
 
 ## Hand it to your coding agent
 
-m0saic was not built for agents. It is a compiler, and code is what agents are good at: an m0 string is one
-line a validator can check, and a m0saic template is TypeScript an agent can write, so most people never write
-one by hand. Nothing here ships a model; bring your own. This repo is a Claude Code plugin and a set of Agent
-Skills, both wired to the m0saic MCP server.
+m0saic is not an AI video generator. There is no prompt-to-video here and no model inside. It is a video
+compiler, and agents are good at it for the same reason they are good at any compiler: they write code against it, the
+same code you could write yourself. An m0 string is one line a validator can check, and a m0saic template is
+TypeScript, so most people hand that part to a coding agent and review the result. Bring whichever agent you
+like. This repo is a Claude Code plugin and a set of Agent Skills, both wired to the m0saic MCP server.
 
 **Claude Code**, as a plugin (skills + the MCP server):
 
