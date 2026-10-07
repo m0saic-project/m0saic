@@ -42,13 +42,32 @@ npx m0saic hello-world
 That's the whole first run. If you have no ffmpeg it says so, and `npx m0saic setup` fetches a pinned build
 with your approval. (Node 18.17+; macOS, Windows and Linux.)
 
-**On this page:** [What you can do](#what-you-can-do) · [Three surfaces](#three-surfaces-one-compiler) · [From your data](#render-something-from-your-data) · [Your agent](#hand-it-to-your-coding-agent) · [m0](#m0) · [What you can make](#what-you-can-make) · [Why m0saic](#why-m0saic) · [vs Remotion and HyperFrames](#remotion-vs-hyperframes-vs-m0saic) · [Everything else](#everything-else) · [Open and commercial](#open-and-commercial-plainly)
+**On this page**
+
+<table>
+  <tr>
+    <td valign="top" width="50%">
+      1. <a href="#what-you-can-do">What you can do</a><br>
+      2. <a href="#three-surfaces-one-compiler">Three surfaces, one compiler</a><br>
+      3. <a href="#render-something-from-your-data">Render something from your data</a><br>
+      4. <a href="#hand-it-to-your-coding-agent">Hand it to your coding agent</a><br>
+      5. <a href="#m0">m0</a>
+    </td>
+    <td valign="top" width="50%">
+      6. <a href="#what-you-can-make">What you can make</a><br>
+      7. <a href="#why-m0saic">Why m0saic?</a><br>
+      8. <a href="#remotion-vs-hyperframes-vs-m0saic">Remotion vs HyperFrames vs m0saic</a><br>
+      9. <a href="#everything-else">Everything else</a><br>
+      10. <a href="#open-and-commercial-plainly">Open and commercial, plainly</a>
+    </td>
+  </tr>
+</table>
 
 ## What you can do
 
 **Make a video**
 
-- **Agentically.** Describe it to your coding agent. It writes the template and renders it, and in Mosaic Desktop it works in the room with you, on the canvas.
+- **Agentically.** Describe it to your coding agent. It writes the template and renders it. In Mosaic Desktop that is a working session, not a one-shot: the agent puts the template on the canvas and asks you a question, you answer in words or by resizing a rectangle, and you edit the same layout together until it is right. Or run the agent headless and let it ship the file.
 - **Interactively.** Open a template in Make, where every bound rectangle is a handle. Draw the layout in Layout. Fill one by hand in Compose.
 - **Programmatically.** A template is TypeScript and its props are your data. `m0saic make` from any script.
 
@@ -220,7 +239,7 @@ Anything you can say as rectangles with known contents. Nine from the library, p
 <table>
   <tr>
     <td width="33%" align="center" valign="top"><img src="assets/gallery/16x9/screencap-grid.png" width="280" alt="Contact sheet"><br><b>Contact sheet</b> from a video<br><sub><code>@m0saic/media/screencap_grid/v3</code></sub></td>
-    <td width="33%" align="center" valign="top"><img src="assets/gallery/16x9/drop-calendar.png" width="280" alt="Drop calendar"><br><b>Drop calendar</b> for a creator's month<br><sub><code>@m0saic-dev/creator/drop-calendar/v1</code></sub></td>
+    <td width="33%" align="center" valign="top"><img src="assets/gallery/16x9/drop-calendar.png" width="280" alt="Drop calendar"><br><b>Drop calendar</b> for the month<br><sub><code>@m0saic-dev/creator/drop-calendar/v1</code></sub></td>
     <td width="33%" align="center" valign="top"><img src="assets/gallery/16x9/commit-feed.png" width="280" alt="Commit feed"><br><b>Commit feed</b> from a repo's week<br><sub><code>@m0saic/alpine/commit-feed/v3</code></sub></td>
   </tr>
   <tr>
@@ -231,7 +250,7 @@ Anything you can say as rectangles with known contents. Nine from the library, p
   <tr>
     <td align="center" valign="top"><img src="assets/gallery/16x9/snippet-morph.png" width="280" alt="Code walkthrough"><br><b>Code walkthrough</b>, line by line<br><sub><code>@m0saic/code/snippet-morph/v2</code></sub></td>
     <td align="center" valign="top"><img src="assets/gallery/16x9/dual-sub.png" width="280" alt="Bilingual subtitles"><br><b>Bilingual subtitles</b> burned in<br><sub><code>@m0saic-dev/language/dual-sub/v1</code></sub></td>
-    <td align="center" valign="top"><img src="assets/gallery/16x9/pipeline-review.png" width="280" alt="Leadership walkthrough"><br><b>Leadership walkthrough</b> of a quarter<br><sub><code>@m0saic-dev/sales/pipeline-review/v1</code></sub></td>
+    <td align="center" valign="top"><img src="assets/gallery/16x9/pipeline-review.png" width="280" alt="Leadership walkthrough"><br><b>Leadership review</b> of a quarter<br><sub><code>@m0saic-dev/sales/pipeline-review/v1</code></sub></td>
   </tr>
 </table>
 
