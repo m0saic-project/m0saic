@@ -1,5 +1,11 @@
 <p align="center">
-  <img src="assets/logo.svg" alt="m0saic" width="120">
+  <a href="https://m0saic.io">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/logo.svg" width="120">
+      <source media="(prefers-color-scheme: light)" srcset="assets/lockup-light.png" width="380">
+      <img src="assets/lockup-light.png" alt="m0saic" width="380">
+    </picture>
+  </a>
 </p>
 
 <h3 align="center">Write TypeScript. Compile to video. Built for agents.</h3>
@@ -8,6 +14,14 @@
   <a href="https://www.npmjs.com/package/m0saic"><img src="https://img.shields.io/npm/v/m0saic?label=npm%20m0saic&color=EF7525" alt="npm"></a>
   <a href="https://m0saic.io"><img src="https://img.shields.io/badge/site-m0saic.io-EF7525" alt="m0saic.io"></a>
   <a href="https://app.m0saic.io"><img src="https://img.shields.io/badge/try%20it-in%20the%20browser-EF7525" alt="Mosaic Web"></a>
+  <a href="https://discord.gg/ns58hGm6Mm"><img src="https://img.shields.io/badge/Discord-join-5865F2?logo=discord&logoColor=white" alt="Discord"></a>
+</p>
+
+<p align="center">
+  <a href="https://x.com/qsbuilds"><img src="https://img.shields.io/twitter/follow/qsbuilds?style=social" alt="Follow on X"></a>
+  <a href="https://mosaicengine.substack.com"><img src="https://img.shields.io/badge/Substack-subscribe-FF6719?logo=substack&logoColor=white" alt="Substack"></a>
+  <a href="https://reddit.com/r/m0saic"><img src="https://img.shields.io/badge/Reddit-r%2Fm0saic-FF4500?logo=reddit&logoColor=white" alt="Reddit"></a>
+  <a href="mailto:hi@m0saic.io"><img src="https://img.shields.io/badge/Contact-hi%40m0saic.io-888" alt="Contact"></a>
 </p>
 
 <p align="center">
@@ -129,6 +143,8 @@ Related projects: [Revideo](https://github.com/midrender/revideo), [Motion Canva
 | **Write templates** | `m0saic init "My Templates"` scaffolds a repo with AGENTS.md and the MCP config already in it; starters: [full](https://github.com/m0saic-project/m0saic-template-repo-starter), [base](https://github.com/m0saic-project/m0saic-template-repo-starter-base) |
 | **Packages** | the language, stdlib, file formats and template utilities are public: [m0saic-dsl/m0](https://github.com/m0saic-dsl/m0), [m0saic-packages](https://github.com/m0saic-project/m0saic-packages) |
 | **For agents** | [m0saic.io/llms.txt](https://m0saic.io/llms.txt) · [m0saic.io/developers](https://m0saic.io/developers) |
+| **Community** | [Discord](https://discord.gg/ns58hGm6Mm) · [r/m0saic](https://reddit.com/r/m0saic) · [Substack](https://mosaicengine.substack.com) · [@qsbuilds](https://x.com/qsbuilds) · the [Community M](https://m0saic.io/community), one tile per contributor |
+| **Learn** | [app.m0saic.io/learn](https://app.m0saic.io/learn): guided tours of Make and the layout language, in the browser |
 
 ## Open and commercial, plainly
 
@@ -141,3 +157,7 @@ renders carry a small QR attribution mark in a corner. [Pro](https://m0saic.io/p
 
 Open an issue here for bugs, template requests and questions; this is m0saic's public front door. If m0saic
 is useful to you, a star helps other people find it.
+
+<p align="center">
+  <sub>Developed and maintained by <strong>m0saic LLC</strong> · <a href="mailto:hi@m0saic.io">hi@m0saic.io</a></sub>
+</p>
