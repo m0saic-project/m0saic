@@ -1,10 +1,6 @@
 <p align="center">
   <a href="https://m0saic.io">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="assets/logo.svg">
-      <source media="(prefers-color-scheme: light)" srcset="assets/logo-light.svg">
-      <img src="assets/logo-light.svg" alt="m0saic" width="200">
-    </picture>
+    <img src="assets/logo-plate.svg" alt="m0saic" width="220">
   </a>
 </p>
 
