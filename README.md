@@ -8,7 +8,7 @@
   </a>
 </p>
 
-<h3 align="center">Write TypeScript. Compile to video. Or hand it to your agent.</h3>
+<h3 align="center">Write TypeScript. Compile to video.</h3>
 
 <p align="center">
   <a href="https://www.npmjs.com/package/m0saic"><img src="https://img.shields.io/npm/v/m0saic?label=npm%20m0saic&color=EF7525" alt="npm"></a>
@@ -44,16 +44,16 @@ with your approval. (Node 18.17+; macOS, Windows and Linux.)
 
 **On this page**
 
-<table>
+<table width="100%">
   <tr>
-    <td valign="top" width="50%">
+    <td valign="top" width="50%" nowrap>
       1. <a href="#what-you-can-do">What you can do</a><br>
       2. <a href="#three-surfaces-one-compiler">Three surfaces, one compiler</a><br>
       3. <a href="#render-something-from-your-data">Render something from your data</a><br>
       4. <a href="#hand-it-to-your-coding-agent">Hand it to your coding agent</a><br>
       5. <a href="#m0">m0</a>
     </td>
-    <td valign="top" width="50%">
+    <td valign="top" width="50%" nowrap>
       6. <a href="#what-you-can-make">What you can make</a><br>
       7. <a href="#why-m0saic">Why m0saic?</a><br>
       8. <a href="#remotion-vs-hyperframes-vs-m0saic">Remotion vs HyperFrames vs m0saic</a><br>
@@ -238,19 +238,19 @@ Anything you can say as rectangles with known contents. Nine from the library, p
 
 <table>
   <tr>
-    <td width="33%" align="center" valign="top"><img src="assets/gallery/16x9/screencap-grid.png" width="280" alt="Contact sheet"><br><b>Contact sheet</b> from a video<br><sub><code>@m0saic/media/screencap_grid/v3</code></sub></td>
-    <td width="33%" align="center" valign="top"><img src="assets/gallery/16x9/drop-calendar.png" width="280" alt="Drop calendar"><br><b>Drop calendar</b> for the month<br><sub><code>@m0saic-dev/creator/drop-calendar/v1</code></sub></td>
-    <td width="33%" align="center" valign="top"><img src="assets/gallery/16x9/commit-feed.png" width="280" alt="Commit feed"><br><b>Commit feed</b> from a repo's week<br><sub><code>@m0saic/alpine/commit-feed/v3</code></sub></td>
+    <td width="33%" align="center" valign="top"><a href="https://app.m0saic.io/make?t=@m0saic/media/screencap_grid/v3"><img src="assets/gallery/16x9/screencap-grid.png" width="280" alt="Contact sheet"></a><br><b>Contact sheet</b> from a video<br><sub><code>@m0saic/media/screencap_grid/v3</code></sub></td>
+    <td width="33%" align="center" valign="top"><a href="https://app.m0saic.io/make?t=@m0saic-dev/creator/drop-calendar/v1"><img src="assets/gallery/16x9/drop-calendar.png" width="280" alt="Drop calendar"></a><br><b>Drop calendar</b> for the month<br><sub><code>@m0saic-dev/creator/drop-calendar/v1</code></sub></td>
+    <td width="33%" align="center" valign="top"><a href="https://app.m0saic.io/make?t=@m0saic/alpine/commit-feed/v3"><img src="assets/gallery/16x9/commit-feed.png" width="280" alt="Commit feed"></a><br><b>Commit feed</b> from a repo's week<br><sub><code>@m0saic/alpine/commit-feed/v3</code></sub></td>
   </tr>
   <tr>
-    <td align="center" valign="top"><img src="assets/gallery/16x9/business-card.png" width="280" alt="Business card"><br><b>Business card</b> with a QR<br><sub><code>@m0saic/brand/business-card/v2</code></sub></td>
-    <td align="center" valign="top"><img src="assets/gallery/16x9/quote-card.png" width="280" alt="Quote card"><br><b>Quote card</b> for a post<br><sub><code>@m0saic/social/quote-card/v2</code></sub></td>
-    <td align="center" valign="top"><img src="assets/gallery/16x9/heatmap.png" width="280" alt="Heatmap"><br><b>Heatmap</b> of activity by day<br><sub><code>@m0saic/alpine/heatmap/v3</code></sub></td>
+    <td align="center" valign="top"><a href="https://app.m0saic.io/make?t=@m0saic/brand/business-card/v2"><img src="assets/gallery/16x9/business-card.png" width="280" alt="Business card"></a><br><b>Business card</b> with a QR<br><sub><code>@m0saic/brand/business-card/v2</code></sub></td>
+    <td align="center" valign="top"><a href="https://app.m0saic.io/make?t=@m0saic/social/quote-card/v2"><img src="assets/gallery/16x9/quote-card.png" width="280" alt="Quote card"></a><br><b>Quote card</b> for a post<br><sub><code>@m0saic/social/quote-card/v2</code></sub></td>
+    <td align="center" valign="top"><a href="https://app.m0saic.io/make?t=@m0saic/alpine/heatmap/v3"><img src="assets/gallery/16x9/heatmap.png" width="280" alt="Heatmap"></a><br><b>Heatmap</b> of activity by day<br><sub><code>@m0saic/alpine/heatmap/v3</code></sub></td>
   </tr>
   <tr>
-    <td align="center" valign="top"><img src="assets/gallery/16x9/snippet-morph.png" width="280" alt="Code walkthrough"><br><b>Code walkthrough</b>, line by line<br><sub><code>@m0saic/code/snippet-morph/v2</code></sub></td>
-    <td align="center" valign="top"><img src="assets/gallery/16x9/dual-sub.png" width="280" alt="Bilingual subtitles"><br><b>Bilingual subtitles</b> burned in<br><sub><code>@m0saic-dev/language/dual-sub/v1</code></sub></td>
-    <td align="center" valign="top"><img src="assets/gallery/16x9/pipeline-review.png" width="280" alt="Leadership walkthrough"><br><b>Leadership review</b> of a quarter<br><sub><code>@m0saic-dev/sales/pipeline-review/v1</code></sub></td>
+    <td align="center" valign="top"><a href="https://app.m0saic.io/make?t=@m0saic/code/snippet-morph/v2"><img src="assets/gallery/16x9/snippet-morph.png" width="280" alt="Code walkthrough"></a><br><b>Code walkthrough</b>, line by line<br><sub><code>@m0saic/code/snippet-morph/v2</code></sub></td>
+    <td align="center" valign="top"><a href="https://app.m0saic.io/make?t=@m0saic-dev/language/dual-sub/v1"><img src="assets/gallery/16x9/dual-sub.png" width="280" alt="Bilingual subtitles"></a><br><b>Bilingual subtitles</b> burned in<br><sub><code>@m0saic-dev/language/dual-sub/v1</code></sub></td>
+    <td align="center" valign="top"><a href="https://app.m0saic.io/make?t=@m0saic-dev/sales/pipeline-review/v1"><img src="assets/gallery/16x9/pipeline-review.png" width="280" alt="Leadership walkthrough"></a><br><b>Leadership review</b> of a quarter<br><sub><code>@m0saic-dev/sales/pipeline-review/v1</code></sub></td>
   </tr>
 </table>
 
