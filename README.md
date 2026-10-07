@@ -45,68 +45,13 @@ with your approval. (Node 18.17+; macOS, Windows and Linux.)
 ## Three surfaces, one compiler
 
 Mosaic Web is where you look first. Mosaic Desktop is the product. The CLI is what makes it production.
-One template, the business card, on all three:
 
-| Mosaic Web | Mosaic Desktop |
-|:-:|:-:|
-| <a href="https://app.m0saic.io/make?t=@m0saic/brand/business-card/v2"><img src="assets/surfaces/web-make-business-card.png" width="440" alt="Mosaic Web: the business card template open in Make, in the browser"></a> | <a href="https://m0saic.io/download"><img src="assets/surfaces/desktop-make-debug.png" width="440" alt="Mosaic Desktop: the Debug view of Make, one tile selected, its inspector in the card and in the pane"></a> |
-| **[app.m0saic.io](https://app.m0saic.io)** · nothing to install | **[Download](https://m0saic.io/download)** · macOS and Windows |
-
-```sh
-npm i -g m0saic
-m0saic make @m0saic/brand/business-card/v2 --output-kind image -o card.png
-```
-
-**[The CLI](https://www.npmjs.com/package/m0saic)** renders anywhere ffmpeg runs: cron jobs, CI, servers,
-a build step inside your own product, or an agent's terminal. Same templates, same bytes, no UI.
-
-### What's inside Mosaic Web
-
-Open a template link and play with it: the live preview, the props, the canvas. The web-safe templates run
-as they are. Rendering is not here, so it hands you the CLI command or the Desktop link.
-
-| | |
-|---|---|
-| ✦ **Make** | a web-safe template on the live canvas, where every bound rectangle is a handle |
-| ⬚ **Templates** | the whole library, with previews, props and versions |
-| ▨ **Compose** | chain templates and files into one pipeline, a `.mosaicx` recipe |
-| ✎ **Layout** | the m0 editor: type the string, see the rectangles, share it as a URL |
-| 📥 **Import** | an SVG in, an m0 layout out |
-| 🫂 **Community** | the community library, one tile per contributor |
-| 📖 **Learn** | guided tours of Make and m0 |
-| ◈ **News** | what changed, release by release |
-
-### What's inside Mosaic Desktop
-
-The complete workspace, with local rendering on your own files. Everything in the browser, plus:
-
-| | |
-|---|---|
-| ✦ **Make** | the same canvas with your own media, the Inspect and Debug views (the geometry, effects, masks and overlays each tile compiles to), and a render button |
-| ▶ **Jobs** | the render queue: progress, logs, the output files, re-runs |
-| ✳ **Agent** | the agent room: template workspaces, a shell with the MCP server already wired in, and the harness picker (Claude Code, Codex, Gemini CLI, Qwen Code, OpenCode, Antigravity, Copilot, or your own command) |
-| ▷ **Run** | a `.mosaicx` opened from disk, rendered as-is with the dated output next to it |
-| 🫂 **Community** | the community library seeded in the app and kept current from signed releases |
-| 🔧 **Tools** | ffmpeg toolchains, the bundled package versions, connections, diagnostics |
-| 📺 **Showcase** | the renders, full screen |
-| ◔ **Telemetry** | what is recorded locally and what leaves the machine, with the switch |
-| ⚑ **License** | activate a key; Free carries the attribution mark, Pro does not |
-
-### What's inside the CLI
-
-| | |
-|---|---|
-| `m0saic make <id or file>` | render a template id, or a `.mosaic` / `.mosaicx` file, to a video or an image; `--props`, `-w -h`, `--output-kind` |
-| `m0saic hello-world` | the first render |
-| `m0saic "3(1,1,1)"` | a wireframe PNG of an m0 string, no template needed; `--anim` for the animated MP4 |
-| `m0saic list-templates` | every template this install can render, plus any `--template-repo` or `--community-repo` |
-| `m0saic init <name>` | a template workspace with `AGENTS.md` and the MCP config already in it |
-| `m0saic mcp` | the MCP server on stdio, for any coding agent |
-| `m0saic open <file>` | open a layout, document or recipe in Mosaic Desktop; `--template <id>` opens its Make page |
-| `m0saic doctor <repo>` | check a template repo against the conventions before you publish it |
-| `m0saic flatten`, `resolve` | a `.mosaic` to one document JSON; a `.mosaicx` recipe to a `.mosaic` document, no render |
-| `m0saic setup` | the one-time pinned ffmpeg install, with your approval |
-| `m0saic versions`, `update`, `license`, `telemetry` | the install, the toolchain, the key, and what leaves the machine |
+| Mosaic Web | Mosaic Desktop | CLI |
+|:-:|:-:|:-:|
+| <a href="https://app.m0saic.io/make?t=@m0saic/brand/business-card/v2"><img src="assets/surfaces/web-business-card.png" width="300" alt="Mosaic Web: the business card template open in Make, in the browser"></a> | <a href="https://m0saic.io/download"><img src="assets/surfaces/desktop-debug-view.png" width="300" alt="Mosaic Desktop: the Debug view of Make, one tile selected, its inspector in the card and in the pane"></a> | <a href="https://www.npmjs.com/package/m0saic"><img src="assets/surfaces/cli-hello-world.png" width="300" alt="A terminal running npx m0saic hello-world: the plan, the ffmpeg render, the finished file and its Mosaic Web link"></a> |
+| **[app.m0saic.io](https://app.m0saic.io)**<br>nothing to install | **[Download](https://m0saic.io/download)**<br>macOS and Windows | **[npm i -g m0saic](https://www.npmjs.com/package/m0saic)**<br>anywhere ffmpeg runs |
+| Open a template link and play with it: the preview, the props, the canvas. Rendering is not here; it hands you the CLI command or the Desktop link. | The complete workspace, with local rendering on your own files. Everything in the browser, plus the rooms below. | Cron jobs, CI, servers, a build step in your own product, an agent's terminal. Same templates, same bytes, no UI. |
+| ✦ **Make** · web-safe templates on the live canvas; every bound rectangle is a handle<br>⬚ **Templates** · the whole library, with previews and props<br>▨ **Compose** · chain templates and files into a `.mosaicx` recipe<br>✎ **Layout** · the m0 editor, shareable as a URL<br>📥 **Import** · an SVG in, an m0 layout out<br>🫂 **Community** · one tile per contributor<br>📖 **Learn** · guided tours of Make and m0<br>◈ **News** · what changed, release by release | ✦ **Make** · your own media, the Inspect and Debug views, a render button<br>▶ **Jobs** · the render queue: progress, logs, outputs<br>✳ **Agent** · workspaces, a shell with the MCP server wired in, the harness picker (Claude Code, Codex, Gemini CLI, Qwen Code, OpenCode, Antigravity, Copilot)<br>▷ **Run** · a `.mosaicx` from disk, rendered as-is<br>🫂 **Community** · seeded in the app, signed updates<br>🔧 **Tools** · ffmpeg toolchains, bundled versions, diagnostics<br>📺 **Showcase** · the renders, full screen<br>◔ **Telemetry** · what leaves the machine, with the switch<br>⚑ **License** · activate a key | `make` · a template id or a `.mosaic` / `.mosaicx` file, to video or image<br>`hello-world` · the first render<br>`"3(1,1,1)"` · a wireframe of an m0 string; `--anim` animates it<br>`list-templates` · everything this install can render<br>`init` · a template workspace with `AGENTS.md` and the MCP config<br>`mcp` · the MCP server on stdio<br>`open` · a file, or a template's Make page, in Desktop<br>`doctor` · check a template repo before you publish<br>`flatten`, `resolve` · documents and recipes, no render<br>`setup` · the pinned ffmpeg install, with your approval<br>`versions`, `update`, `license`, `telemetry` |
 
 ## Render something from your data
 
