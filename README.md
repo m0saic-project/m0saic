@@ -8,7 +8,7 @@
   </a>
 </p>
 
-<h3 align="center">Write TypeScript. Compile to video. Built for agents.</h3>
+<h3 align="center">Write TypeScript. Compile to video. Or hand it to your agent.</h3>
 
 <p align="center">
   <a href="https://www.npmjs.com/package/m0saic"><img src="https://img.shields.io/npm/v/m0saic?label=npm%20m0saic&color=EF7525" alt="npm"></a>
@@ -42,6 +42,24 @@ npx m0saic hello-world
 That's the whole first run. If you have no ffmpeg it says so, and `npx m0saic setup` fetches a pinned build
 with your approval. (Node 18.17+; macOS, Windows and Linux.)
 
+**On this page:** [What you can do](#what-you-can-do) · [Three surfaces](#three-surfaces-one-compiler) · [From your data](#render-something-from-your-data) · [Your agent](#hand-it-to-your-coding-agent) · [m0](#m0) · [What you can make](#what-you-can-make) · [Why m0saic](#why-m0saic) · [vs Remotion and HyperFrames](#remotion-vs-hyperframes-vs-m0saic) · [Everything else](#everything-else) · [Open and commercial](#open-and-commercial-plainly)
+
+## What you can do
+
+**Make a video**
+
+- **Agentically.** Describe it to your coding agent. It writes the template and renders it, and in Mosaic Desktop it works in the room with you, on the canvas.
+- **Interactively.** Open a template in Make, where every bound rectangle is a handle. Draw the layout in Layout. Fill one by hand in Compose.
+- **Programmatically.** A template is TypeScript and its props are your data. `m0saic make` from any script.
+
+The template and its props are the source of truth, so you can switch between the three at any point.
+
+**Run it**
+
+- **Template libraries.** A repo of templates for your team or your brand: `m0saic init`, publish, and every surface loads it.
+- **Batch rendering.** The CLI renders anywhere ffmpeg runs, with no browser in the pipeline: cron, CI, your own servers.
+- **Inside your product.** Call the CLI or the MCP server from your own tool, or hand people a Mosaic Web link that opens with the props filled in.
+
 ## Three surfaces, one compiler
 
 Mosaic Web is where you look first. Mosaic Desktop is the product. The CLI is what makes it production.
@@ -71,42 +89,45 @@ Mosaic Web is where you look first. Mosaic Desktop is the product. The CLI is wh
 
 | | Web | Desktop | CLI |
 |---|:-:|:-:|:-:|
-| ✦ **Make** · a template on the live canvas; every bound rectangle is a handle | a playground and editor for the web-safe templates | the full Make page | `make` |
+| ✦ **Make** · a template on the live canvas; every bound rectangle is a handle | [a playground and editor for the web-safe templates](https://app.m0saic.io/make) | the full Make page | `make` |
 | 🎬 **Render** · ffmpeg on your machine | hands you the command | through Make | `make` |
-| ▶ **Automation** · cron, CI, a schedule | | the Jobs queue | `make` from any script |
-| ⬚ **Templates** · the library, with previews and props | ✓ | ✓ | `list-templates` |
-| ▨ **Compose** · chain templates and files into a `.mosaicx` recipe | Desktop only | ✓ | n/a |
-| ✎ **Layout** · the m0 editor | ✓ shareable as a URL | ✓ | `"3(1,1,1)"`, `--anim` |
-| 📥 **Import** · an SVG in, an m0 layout out | ✓ | ✓ | |
-| ✳ **Agent** · workspaces, a shell with the MCP server wired in, the harness picker | | ✓ | `mcp`, `init` |
-| 🫂 **Community** · one tile per contributor | ✓ | ✓ seeded, signed updates | `--community-repo` |
-| 📖 **Learn** · guided tours of Make and m0 | ✓ | ✓ | |
-| ◈ **News** · what changed, release by release | ✓ | ✓ | |
-| 🔧 **Tools** · ffmpeg toolchains, bundled versions, diagnostics | | ✓ | `setup`, `versions`, `doctor` |
-| 🗂 **File types** · `.m0`, `.m0c`, `.m0p`, `.m0v`, `.mosaic`, `.mosaicx` | save and open | registered, with file icons on macOS and Windows | `make`, `resolve`, `open` |
-| ◔ **Telemetry** · [standard / local / ghost](TELEMETRY.md) | | ✓ | `telemetry` |
-| ⚑ **License** · activate a key | | ✓ | `activate`, `license` |
+| ▶ **Automation** · cron, CI, a schedule | n/a | the Jobs queue | `make` from any script |
+| ⬚ **Templates** · the library, with previews and props | [✓ open](https://app.m0saic.io/templates) | ✓ | `list-templates` |
+| ▨ **Compose** · start from a layout and fill the rectangles yourself: a `.mosaicx` built by hand instead of by a template | Desktop only | ✓ | n/a |
+| ✎ **Layout** · the m0 editor | [✓ open](https://app.m0saic.io/layout) · share by URL | ✓ | `"3(1,1,1)"`, `--anim` |
+| 📥 **Import** · an SVG in, an m0 layout out | [✓ open](https://app.m0saic.io/svg-to-mosaic) | ✓ | n/a |
+| ✳ **Agent** · workspaces, a shell with the MCP server wired in, the harness picker (agent-agnostic: bring your own) | Desktop only | ✓ | `mcp`, `init` |
+| 🫂 **Community** · one tile per contributor | [✓ open](https://app.m0saic.io/community) | ✓ seeded, signed updates | `--community-repo` |
+| 📖 **Learn** · guided tours of Make and m0 | [✓ open](https://app.m0saic.io/learn) | ✓ | n/a |
+| ◈ **News** · what changed, release by release | [✓ open](https://app.m0saic.io/news) | ✓ | n/a |
+| 🔧 **Tools** · ffmpeg toolchains, bundled versions, diagnostics | Desktop only | ✓ | `setup`, `versions`, `doctor` |
+| 🗂 **[File types](https://github.com/m0saic-dsl/m0/blob/main/FILE-FORMATS.md)** · `.m0`, `.m0c`, `.m0p`, `.m0v`, `.mosaic`, `.mosaicx` | save and open | registered, with file icons on macOS and Windows | `make`, `resolve`, `open` |
+| ◔ **Telemetry** · [standard / local / ghost](TELEMETRY.md) | n/a | ✓ | `telemetry` |
+| ⚑ **License** · activate a key | n/a | ✓ | `activate`, `license` |
 
 ## Render something from your data
 
 ```sh
 npm i -g m0saic
 m0saic setup --yes
-m0saic make @m0saic/alpine/leaderboard/v2 --props @examples/leaderboard/leaderboard.json --output-kind image -o leaderboard.png
+m0saic make @m0saic/alpine/leaderboard/v2 --props @examples/leaderboard/leaderboard.json -o leaderboard.mp4
 ```
 
-<p align="center"><img src="examples/leaderboard/leaderboard.png" alt="A ranked leaderboard rendered from leaderboard.json" width="560"></p>
+<p align="center"><img src="examples/leaderboard/leaderboard.gif" alt="A ranked leaderboard rendered from leaderboard.json, the values counting up" width="560"></p>
 
 Five names and five numbers in ([leaderboard.json](examples/leaderboard/leaderboard.json)), a ranked board
-out. Drop `--output-kind image` (and the `anim` prop) for the animated MP4, where the values count up.
-`-w 1080 -h 1920` re-lays the same template for a vertical post; nothing is letterboxed.
-`m0saic list-templates` shows every template, and [m0saic.io/llms-full.txt](https://m0saic.io/llms-full.txt)
-lists each one with its props.
+out, and the motion comes from the data: the values count up, the ranks land. `--output-kind image` gives
+the still. `-w 1080 -h 1920` re-lays the same template for a vertical post; nothing is letterboxed. The same
+idea at full size is the leadership walkthrough in the gallery below: a quarter's export in, a narrated,
+zooming review out. `m0saic list-templates` shows every template, and
+[m0saic.io/llms-full.txt](https://m0saic.io/llms-full.txt) lists each one with its props.
 
-## Give it to your coding agent
+## Hand it to your coding agent
 
-m0saic is built to be driven by agents: an m0 string is one line a validator can check, and a m0saic template
-is code your agent can write. This repo is a Claude Code plugin and a set of Agent Skills, both wired to the m0saic MCP server.
+m0saic was not built for agents. It is a compiler, and code is what agents are good at: an m0 string is one
+line a validator can check, and a m0saic template is TypeScript an agent can write, so most people never write
+one by hand. Nothing here ships a model; bring your own. This repo is a Claude Code plugin and a set of Agent
+Skills, both wired to the m0saic MCP server.
 
 **Claude Code**, as a plugin (skills + the MCP server):
 
@@ -195,11 +216,23 @@ and [m0saic.io/why](https://m0saic.io/why) is the case for rectangles.
 
 Anything you can say as rectangles with known contents. Nine from the library, picked for range:
 
-| | | |
-|:-:|:-:|:-:|
-| <img src="assets/gallery/16x9/screencap-grid.png" width="260"><br>**Contact sheet** from a video<br>`@m0saic/media/screencap_grid/v3` | <img src="assets/gallery/16x9/drop-calendar.png" width="260"><br>**Drop calendar** for a creator's month<br>`@m0saic-dev/creator/drop-calendar/v1` | <img src="assets/gallery/16x9/commit-feed.png" width="260"><br>**Commit feed** from a repo's week<br>`@m0saic/alpine/commit-feed/v3` |
-| <img src="assets/gallery/16x9/business-card.png" width="260"><br>**Business card** with a QR<br>`@m0saic/brand/business-card/v2` | <img src="assets/gallery/16x9/quote-card.png" width="260"><br>**Quote card** for a post<br>`@m0saic/social/quote-card/v2` | <img src="assets/gallery/16x9/heatmap.png" width="260"><br>**Heatmap** of activity by day<br>`@m0saic/alpine/heatmap/v3` |
-| <img src="assets/gallery/16x9/snippet-morph.png" width="260"><br>**Code walkthrough**, line by line<br>`@m0saic/code/snippet-morph/v2` | <img src="assets/gallery/16x9/dual-sub.png" width="260"><br>**Bilingual subtitles** burned in<br>`@m0saic-dev/language/dual-sub/v1` | <img src="assets/gallery/16x9/pipeline-review.png" width="260"><br>**Leadership walkthrough** of a sales quarter<br>`@m0saic-dev/sales/pipeline-review/v1` |
+<table>
+  <tr>
+    <td width="33%" align="center" valign="top"><img src="assets/gallery/16x9/screencap-grid.png" width="280" alt="Contact sheet"><br><b>Contact sheet</b> from a video<br><sub><code>@m0saic/media/screencap_grid/v3</code></sub></td>
+    <td width="33%" align="center" valign="top"><img src="assets/gallery/16x9/drop-calendar.png" width="280" alt="Drop calendar"><br><b>Drop calendar</b> for a creator's month<br><sub><code>@m0saic-dev/creator/drop-calendar/v1</code></sub></td>
+    <td width="33%" align="center" valign="top"><img src="assets/gallery/16x9/commit-feed.png" width="280" alt="Commit feed"><br><b>Commit feed</b> from a repo's week<br><sub><code>@m0saic/alpine/commit-feed/v3</code></sub></td>
+  </tr>
+  <tr>
+    <td align="center" valign="top"><img src="assets/gallery/16x9/business-card.png" width="280" alt="Business card"><br><b>Business card</b> with a QR<br><sub><code>@m0saic/brand/business-card/v2</code></sub></td>
+    <td align="center" valign="top"><img src="assets/gallery/16x9/quote-card.png" width="280" alt="Quote card"><br><b>Quote card</b> for a post<br><sub><code>@m0saic/social/quote-card/v2</code></sub></td>
+    <td align="center" valign="top"><img src="assets/gallery/16x9/heatmap.png" width="280" alt="Heatmap"><br><b>Heatmap</b> of activity by day<br><sub><code>@m0saic/alpine/heatmap/v3</code></sub></td>
+  </tr>
+  <tr>
+    <td align="center" valign="top"><img src="assets/gallery/16x9/snippet-morph.png" width="280" alt="Code walkthrough"><br><b>Code walkthrough</b>, line by line<br><sub><code>@m0saic/code/snippet-morph/v2</code></sub></td>
+    <td align="center" valign="top"><img src="assets/gallery/16x9/dual-sub.png" width="280" alt="Bilingual subtitles"><br><b>Bilingual subtitles</b> burned in<br><sub><code>@m0saic-dev/language/dual-sub/v1</code></sub></td>
+    <td align="center" valign="top"><img src="assets/gallery/16x9/pipeline-review.png" width="280" alt="Leadership walkthrough"><br><b>Leadership walkthrough</b> of a quarter<br><sub><code>@m0saic-dev/sales/pipeline-review/v1</code></sub></td>
+  </tr>
+</table>
 
 Also in the library: charts and KPI cards, repo pulses, highlight clips, print dielines, QR codes and
 barcodes, photo collages, lyric reels, watermarks, blur regions, title cards, partner maps. More at
@@ -213,7 +246,7 @@ barcodes, photo collages, lyric reels, watermarks, blur regions, title cards, pa
 - **Geometry-native:** a video is an m0 string (rectangles on a canvas) and one source per rectangle. No DOM, no React requirement. Because everything resolves to geometry, any template can render and nest any other. [Why rectangles](https://m0saic.io/why).
 - **No browser in the pipeline:** a template outputs a media-intent IR; the compiler lowers that to an ffmpeg graph. Nothing is screenshotted, so a render costs what ffmpeg costs and runs anywhere ffmpeg does.
 - **Deterministic by construction:** integer pixel bounds, seeded randomness, no wall clock. The same template, props and canvas give the same bytes.
-- **Agent-friendly:** an m0 string is one line a validator checks, a m0saic template is TypeScript an agent can write, and the MCP server and the skills ship in this repo. The CLI is non-interactive.
+- **Agents are good at it:** an m0 string is one line a validator checks, a m0saic template is TypeScript, and the MCP server and the skills ship in this repo. The CLI is non-interactive. Bring any agent; m0saic ships no model.
 - **Data in, file out:** props are whatever the template declares: JSON rows, pasted CSV, numbers, colours, media files. A quarter's export, a commit log, a budget. Re-render on a schedule, in CI, or when the numbers change.
 - **Open language, commercial engine:** the m0 language, its stdlib and file formats are Apache-2.0 and the template libraries are public. The engine is free to use with an attribution mark; Pro removes it.
 
