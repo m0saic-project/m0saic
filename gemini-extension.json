@@ -1,0 +1,11 @@
+{
+  "name": "m0saic",
+  "version": "0.3.2",
+  "mcpServers": {
+    "m0saic": {
+      "command": "npx",
+      "args": ["-y", "m0saic", "mcp"]
+    }
+  },
+  "contextFileName": "GEMINI.md"
+}

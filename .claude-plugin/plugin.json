@@ -1,0 +1,10 @@
+{
+  "name": "m0saic",
+  "version": "0.3.2",
+  "description": "Render charts, cards, QR codes and short videos as real MP4/PNG files from your data, and write new m0saic video templates. Skills plus the m0saic MCP server.",
+  "author": { "name": "m0saic", "url": "https://m0saic.io" },
+  "homepage": "https://m0saic.io/developers",
+  "repository": "https://github.com/m0saic-project/m0saic",
+  "license": "MIT",
+  "keywords": ["video", "ffmpeg", "programmatic-video", "templates", "charts", "mcp", "m0saic"]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "m0saic",
+  "description": "m0saic: deterministic video from a layout string and your data.",
+  "owner": {
+    "name": "m0saic",
+    "url": "https://m0saic.io"
+  },
+  "plugins": [
+    {
+      "name": "m0saic",
+      "source": ".",
+      "description": "Render video and images from data with m0saic templates, and write new templates. Includes the m0saic MCP server.",
+      "category": "media",
+      "tags": [
+        "video",
+        "ffmpeg",
+        "charts",
+        "templates",
+        "mcp"
+      ]
+    }
+  ]
+}

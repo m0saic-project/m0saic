@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "m0saic": {
+      "command": "npx",
+      "args": ["-y", "m0saic", "mcp"]
+    }
+  }
+}
