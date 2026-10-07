@@ -26,7 +26,7 @@
 
 <p align="center">
   <img src="assets/hero.gif" alt="An m0 string turning into rectangles, one tile at a time" width="800">
-  <br><sub>That is a template too: <a href="https://app.m0saic.io/make?t=@m0saic/dsl-tutorial/v2&p=zq1YqLkhNTfEtzSnJLMjJTC1SsjLRs6gFAA">open it in Mosaic Web</a> and change the m0 string.</sub>
+  <br><sub>This is a template too: <a href="https://app.m0saic.io/make?t=@m0saic/dsl-tutorial/v2&p=zq1YqLkhNTfEtzSnJLMjJTC1SsjLRs6gFAA">open it in Mosaic Web</a> and change the m0 string.</sub>
 </p>
 
 m0saic is a video compiler. A m0saic template is a TypeScript program that returns an **[m0](https://github.com/m0saic-dsl/m0)**
