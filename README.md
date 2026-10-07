@@ -71,20 +71,20 @@ Mosaic Web is where you look first. Mosaic Desktop is the product. The CLI is wh
 
 | | Web | Desktop | CLI |
 |---|:-:|:-:|:-:|
-| ✦ **Make** · a template on the live canvas; every bound rectangle is a handle | web-safe templates | your own media, the Inspect and Debug views | `make` |
-| ▶ **Render** · ffmpeg on your machine | hands you the command | the Jobs queue | `make`, `hello-world` |
+| ✦ **Make** · a template on the live canvas; every bound rectangle is a handle | a playground and editor for the web-safe templates | the full Make page | `make` |
+| 🎬 **Render** · ffmpeg on your machine | hands you the command | through Make | `make` |
+| ▶ **Automation** · cron, CI, a schedule | | the Jobs queue | `make` from any script |
 | ⬚ **Templates** · the library, with previews and props | ✓ | ✓ | `list-templates` |
-| ▨ **Compose** · chain templates and files into a `.mosaicx` recipe | ✓ | ✓ | `resolve`, `flatten` |
+| ▨ **Compose** · chain templates and files into a `.mosaicx` recipe | Desktop only | ✓ | n/a |
 | ✎ **Layout** · the m0 editor | ✓ shareable as a URL | ✓ | `"3(1,1,1)"`, `--anim` |
 | 📥 **Import** · an SVG in, an m0 layout out | ✓ | ✓ | |
 | ✳ **Agent** · workspaces, a shell with the MCP server wired in, the harness picker | | ✓ | `mcp`, `init` |
-| ▷ **Run** · a `.mosaicx` from disk, rendered as-is | | ✓ | `make file.mosaicx`, `open` |
 | 🫂 **Community** · one tile per contributor | ✓ | ✓ seeded, signed updates | `--community-repo` |
 | 📖 **Learn** · guided tours of Make and m0 | ✓ | ✓ | |
 | ◈ **News** · what changed, release by release | ✓ | ✓ | |
 | 🔧 **Tools** · ffmpeg toolchains, bundled versions, diagnostics | | ✓ | `setup`, `versions`, `doctor` |
-| 📺 **Showcase** · the renders, full screen | | ✓ | |
-| ◔ **Telemetry** · what leaves the machine, with the switch | | ✓ | `telemetry` |
+| 🗂 **File types** · `.m0`, `.m0c`, `.m0p`, `.m0v`, `.mosaic`, `.mosaicx` | save and open | registered, with file icons on macOS and Windows | `make`, `resolve`, `open` |
+| ◔ **Telemetry** · [standard / local / ghost](TELEMETRY.md) | | ✓ | `telemetry` |
 | ⚑ **License** · activate a key | | ✓ | `activate`, `license` |
 
 ## Render something from your data
@@ -197,9 +197,9 @@ Anything you can say as rectangles with known contents. Nine from the library, p
 
 | | | |
 |:-:|:-:|:-:|
-| <img src="assets/gallery/screencap-grid.png" width="260"><br>**Contact sheet** from a video<br>`@m0saic/media/screencap_grid/v3` | <img src="assets/gallery/drop-calendar.png" width="260"><br>**Drop calendar** for a creator's month<br>`@m0saic-dev/creator/drop-calendar/v1` | <img src="assets/gallery/commit-feed.png" width="260"><br>**Commit feed** from a repo's week<br>`@m0saic/alpine/commit-feed/v3` |
-| <img src="assets/gallery/business-card.png" width="260"><br>**Business card** with a QR<br>`@m0saic/brand/business-card/v2` | <img src="assets/gallery/quote-card.png" width="260"><br>**Quote card** for a post<br>`@m0saic/social/quote-card/v2` | <img src="assets/gallery/heatmap.png" width="260"><br>**Heatmap** of activity by day<br>`@m0saic/alpine/heatmap/v3` |
-| <img src="assets/gallery/snippet-morph.png" width="260"><br>**Code walkthrough**, line by line<br>`@m0saic/code/snippet-morph/v2` | <img src="assets/gallery/dual-sub.png" width="260"><br>**Bilingual subtitles** burned in<br>`@m0saic-dev/language/dual-sub/v1` | <img src="assets/gallery/pipeline-review.png" width="260"><br>**Leadership walkthrough** of a sales quarter<br>`@m0saic-dev/sales/pipeline-review/v1` |
+| <img src="assets/gallery/16x9/screencap-grid.png" width="260"><br>**Contact sheet** from a video<br>`@m0saic/media/screencap_grid/v3` | <img src="assets/gallery/16x9/drop-calendar.png" width="260"><br>**Drop calendar** for a creator's month<br>`@m0saic-dev/creator/drop-calendar/v1` | <img src="assets/gallery/16x9/commit-feed.png" width="260"><br>**Commit feed** from a repo's week<br>`@m0saic/alpine/commit-feed/v3` |
+| <img src="assets/gallery/16x9/business-card.png" width="260"><br>**Business card** with a QR<br>`@m0saic/brand/business-card/v2` | <img src="assets/gallery/16x9/quote-card.png" width="260"><br>**Quote card** for a post<br>`@m0saic/social/quote-card/v2` | <img src="assets/gallery/16x9/heatmap.png" width="260"><br>**Heatmap** of activity by day<br>`@m0saic/alpine/heatmap/v3` |
+| <img src="assets/gallery/16x9/snippet-morph.png" width="260"><br>**Code walkthrough**, line by line<br>`@m0saic/code/snippet-morph/v2` | <img src="assets/gallery/16x9/dual-sub.png" width="260"><br>**Bilingual subtitles** burned in<br>`@m0saic-dev/language/dual-sub/v1` | <img src="assets/gallery/16x9/pipeline-review.png" width="260"><br>**Leadership walkthrough** of a sales quarter<br>`@m0saic-dev/sales/pipeline-review/v1` |
 
 Also in the library: charts and KPI cards, repo pulses, highlight clips, print dielines, QR codes and
 barcodes, photo collages, lyric reels, watermarks, blur regions, title cards, partner maps. More at
@@ -243,6 +243,7 @@ Related projects: [Revideo](https://github.com/midrender/revideo), [Motion Canva
 | | |
 |---|---|
 | **Write templates** | `m0saic init "My Templates"` scaffolds a repo with AGENTS.md and the MCP config already in it; starters: [full](https://github.com/m0saic-project/m0saic-template-repo-starter), [base](https://github.com/m0saic-project/m0saic-template-repo-starter-base) |
+| **VS Code** | the m0saic extension: file icons, wireframe hover previews on any m0 string, inline validation, and JSON schemas for `.m0c` / `.m0p` / `.m0v` / `.mosaic` / `.mosaicx`. On the Marketplace soon |
 | **Packages** | the language, stdlib, file formats and template utilities are public: [m0saic-dsl/m0](https://github.com/m0saic-dsl/m0), [m0saic-packages](https://github.com/m0saic-project/m0saic-packages) |
 | **For agents** | [m0saic.io/agents](https://m0saic.io/agents) · [m0saic.io/llms.txt](https://m0saic.io/llms.txt) · [m0saic.io/llms-full.txt](https://m0saic.io/llms-full.txt) |
 | **Community** | [Discord](https://discord.gg/ns58hGm6Mm) · [r/m0saic](https://reddit.com/r/m0saic) · [Substack](https://mosaicengine.substack.com) · [@qsbuilds](https://x.com/qsbuilds) · the [Community M](https://m0saic.io/community), one tile per contributor |
