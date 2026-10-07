@@ -25,11 +25,11 @@
 </p>
 
 <p align="center">
-  <img src="assets/hero.gif" alt="An m0 layout string turning into rectangles, one tile at a time" width="800">
+  <img src="assets/hero.gif" alt="An m0 (layout string) turning into rectangles, one tile at a time" width="800">
 </p>
 
-m0saic is a video compiler. A template is a small TypeScript program that returns a **layout string**
-(rectangles on a canvas) and one source per rectangle; m0saic compiles that to ffmpeg and hands you an MP4
+m0saic is a video compiler. A template is a small TypeScript program that returns an **[m0](https://github.com/m0saic-dsl/m0)**, a layout string
+(rectangles on a canvas), and one source per rectangle; m0saic compiles that to ffmpeg and hands you an MP4
 or a PNG. There's no browser in the pipeline and no timeline to drag. The same template, data and canvas
 give the same geometry at any resolution, so a render behaves like a build artifact you can test, diff
 and re-run from a cron job or a coding agent.
@@ -57,7 +57,7 @@ template for a vertical post; nothing is letterboxed. `m0saic list-templates` sh
 
 ## Give it to your coding agent
 
-m0saic is built to be driven by agents: the layout is one string a validator can check, and a template is
+m0saic is built to be driven by agents: the m0 is one string a validator can check, and a template is
 code your agent can write. This repo is a Claude Code plugin and a set of Agent Skills, both wired to the m0saic MCP server.
 
 **Claude Code**, as a plugin (skills + the MCP server):
@@ -91,7 +91,7 @@ Then ask for what you want: *"make a 15-second vertical video of this week's com
 into a bar chart I can post"*, *"build me a template for my podcast's episode cards"*. The skills tell the
 agent when to render with an existing template and when to write a new one.
 
-## The layout is a string
+## m0, the layout string
 
 ```
 3(1,1,1)          three equal columns
@@ -101,8 +101,8 @@ agent when to render with an existing template and when to write a new one.
 
 `(` splits across, `[` splits down, `{}` layers content over a tile. Every rectangle gets integer pixel
 bounds: a three-way split of 1920 is 640/640/640, and when a split doesn't divide, the remainder is handed
-out the same way every time. `npx m0saic "3(1,1,1)" --anim` renders any string you type as an animated
-wireframe. The language is open (Apache-2.0) at [m0saic-dsl/m0](https://github.com/m0saic-dsl/m0).
+out the same way every time. `npx m0saic "3(1,1,1)" --anim` renders any m0 you type as an animated
+wireframe. m0 is open (Apache-2.0); the official implementation is [m0saic-dsl/m0](https://github.com/m0saic-dsl/m0).
 
 ## What people make with it
 
@@ -116,15 +116,28 @@ collages, lyric reels, contact sheets, watermarks, blur regions, highlight clips
 [m0saic.io/gallery](https://m0saic.io/gallery), plus a [community library](https://github.com/m0saic-project/m0saic-community-templates)
 and an agent that ships [one template a day](https://github.com/m0saic-project/one-a-day).
 
-## How it compares
+## Why m0saic?
 
-Three tools make video from code, each from a different source of truth:
+- **Geometry-native:** a composition is an m0, a layout string (rectangles on a canvas), and one source per rectangle. No DOM, no timeline format, no React requirement.
+- **No browser in the pipeline:** the compiler lowers the layout to an ffmpeg graph. Nothing is screenshotted, so a render costs what ffmpeg costs and runs anywhere ffmpeg does.
+- **Deterministic by construction:** integer pixel bounds, seeded randomness, no wall clock. The same template, data and canvas give the same bytes, at any resolution.
+- **Agent-friendly:** the m0 is one string a validator checks, a template is TypeScript an agent can write, and the MCP server and the skills ship in this repo. The CLI is non-interactive.
+- **Data in, file out:** props are JSON or pasted CSV: a quarter's export, a commit log, a budget. Re-render on a schedule, in CI, or when the numbers change.
+- **Open language, commercial engine:** the m0 language, its stdlib and file formats are Apache-2.0 and the template libraries are public. The engine is free to use with an attribution mark; Pro removes it.
 
-| | Source of truth | Renders through |
-|---|---|---|
-| [Remotion](https://github.com/remotion-dev/remotion) | React components | a headless browser |
-| [HyperFrames](https://github.com/heygen-com/hyperframes) | HTML, CSS and JavaScript | a headless browser + FFmpeg |
-| **m0saic** | geometry: a layout string + one source per rectangle | FFmpeg only, no browser |
+## Remotion vs HyperFrames vs m0saic
+
+All three make video from code. [Remotion](https://github.com/remotion-dev/remotion)'s bet is React components. [HyperFrames](https://github.com/heygen-com/hyperframes)' bet is plain HTML. m0saic's bet is geometry: an m0 (a layout string) and one source per rectangle, with no browser anywhere in the render.
+
+| | Remotion | HyperFrames | m0saic |
+|---|---|---|---|
+| Authoring | React components | HTML + CSS + seekable animation | an m0 (layout string), a TypeScript template, your data |
+| Renders through | headless Chrome + FFmpeg | headless Chrome + FFmpeg | FFmpeg only |
+| Build step | bundler required | none; `index.html` plays as-is | none to render (`npx m0saic make …`); `tsc` to author a template |
+| Agent handoff | JSX / React project | plain HTML files | one validated string, typed props, an MCP server and skills |
+| Animation | frame-driven via `useCurrentFrame`; wall-clock libraries need care | seekable, frame-accurate via adapters | keyframe expressions evaluated per frame by ffmpeg; no wall clock |
+| Distributed rendering | Remotion Lambda | local and AWS Lambda | any machine with ffmpeg: local, CI, cron, your servers |
+| License | source-available Remotion License | Apache 2.0 | Apache-2.0 language and formats; commercial engine, free with attribution |
 
 If you want to write React or HTML, use the first two; they're excellent. m0saic is for when the video is
 data in, file out: on a server, in CI, from an agent, the same way every time, with nothing to draw in a
@@ -144,7 +157,7 @@ Related projects: [Revideo](https://github.com/midrender/revideo), [Motion Canva
 | **Packages** | the language, stdlib, file formats and template utilities are public: [m0saic-dsl/m0](https://github.com/m0saic-dsl/m0), [m0saic-packages](https://github.com/m0saic-project/m0saic-packages) |
 | **For agents** | [m0saic.io/llms.txt](https://m0saic.io/llms.txt) · [m0saic.io/developers](https://m0saic.io/developers) |
 | **Community** | [Discord](https://discord.gg/ns58hGm6Mm) · [r/m0saic](https://reddit.com/r/m0saic) · [Substack](https://mosaicengine.substack.com) · [@qsbuilds](https://x.com/qsbuilds) · the [Community M](https://m0saic.io/community), one tile per contributor |
-| **Learn** | [app.m0saic.io/learn](https://app.m0saic.io/learn): guided tours of Make and the layout language, in the browser |
+| **Learn** | [app.m0saic.io/learn](https://app.m0saic.io/learn): guided tours of Make and m0, in the browser |
 
 ## Open and commercial, plainly
 
